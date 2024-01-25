@@ -28,7 +28,7 @@ jobs:
       - name: Build Docker images
         run: |
           cp .env.example .env
-          docker-compose build
+          docker build -f Dockerfile -t librechat .
           docker build -f Dockerfile.multi --target api-build -t librechat-api .
 
       # Tag and push the images with the 'latest' tag
